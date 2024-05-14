@@ -1,10 +1,11 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'combined.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'plugin'),
     },
     mode: 'production',
     module: {
@@ -18,4 +19,11 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'public/', to: './' }
+            ],
+        }),
+    ],
 };

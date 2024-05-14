@@ -18,7 +18,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.ston.fi/*"],
-      "js": ["dist/combined.js"]
+      "js": ["combined.js"]
     }
   ]
 }
