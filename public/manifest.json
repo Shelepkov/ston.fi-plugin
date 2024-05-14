@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Ston.fi helper",
+  "name": "Murash helper",
   "version": "1.0",
   "description": "Add price table and save result button to pool pages on ston.fi",
   "permissions": [
