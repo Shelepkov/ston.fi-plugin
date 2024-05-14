@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -25,5 +26,10 @@ module.exports = {
                 { from: 'public/', to: './' }
             ],
         }),
+        new ZipPlugin({
+            filename: 'murash.zip',
+            path: path.resolve(__dirname, 'zip'),
+            pathPrefix: ''
+        })
     ],
 };
