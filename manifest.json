@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Ston.fi helper",
   "version": "1.0",
-  "description": "Show an alert and log time when visiting ston.fi",
+  "description": "Add CoinStats widget to pool pages on ston.fi",
   "permissions": [
     "storage",
     "scripting",
