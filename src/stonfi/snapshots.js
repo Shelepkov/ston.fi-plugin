@@ -27,7 +27,7 @@ export function insertSaveButton() {
 
                 const thead = document.createElement('thead');
                 const headerRow = document.createElement('tr');
-                const headers = ['Date', 'Pair'];
+                const headers = ['Date', 'Pair', 'Actions'];
 
                 headers.forEach(headerText => {
                     const th = document.createElement('th');
@@ -95,8 +95,28 @@ function addResultToTable(result) {
     pairCell.style.border = '1px solid #dddddd';
     pairCell.style.padding = '8px';
 
+    const actionCell = document.createElement('td');
+    actionCell.style.border = '1px solid #dddddd';
+    actionCell.style.padding = '8px';
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Удалить';
+    deleteButton.addEventListener('click', function() {
+        deleteResult(result);
+        row.remove();
+    });
+
+    actionCell.appendChild(deleteButton);
     row.appendChild(dateCell);
     row.appendChild(pairCell);
+    row.appendChild(actionCell);
 
     tbody.appendChild(row);
+}
+
+function deleteResult(resultToDelete) {
+    chrome.storage.local.get({ results: [] }, function (data) {
+        const updatedResults = data.results.filter(result => result.date !== resultToDelete.date && result.pair !== resultToDelete.pair);
+        chrome.storage.local.set({ results: updatedResults });
+    });
 }
