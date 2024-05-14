@@ -6,3 +6,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         });
     }
 });
+
+chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
+    if (details.url.includes("ston.fi")) {
+        chrome.scripting.executeScript({
+            target: {tabId: details.tabId},
+            files: ['content.js']
+        });
+    }
+});

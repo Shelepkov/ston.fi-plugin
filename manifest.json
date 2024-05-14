@@ -2,11 +2,12 @@
   "manifest_version": 3,
   "name": "Ston.fi helper",
   "version": "1.0",
-  "description": "Add CoinStats widget to pool pages on ston.fi",
+  "description": "Add CoinMarketCap widget to pool pages on ston.fi",
   "permissions": [
     "storage",
     "scripting",
-    "tabs"
+    "tabs",
+    "webNavigation"
   ],
   "host_permissions": [
     "*://*.ston.fi/*"
