@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Ston.fi helper",
+  "version": "1.0",
+  "description": "Show an alert and log time when visiting ston.fi",
+  "permissions": [
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.ston.fi/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.ston.fi/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
