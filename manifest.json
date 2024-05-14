@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Ston.fi helper",
   "version": "1.0",
-  "description": "Add CoinMarketCap widget to pool pages on ston.fi",
+  "description": "Add price table and save result button to pool pages on ston.fi",
   "permissions": [
     "storage",
     "scripting",
@@ -18,7 +18,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.ston.fi/*"],
-      "js": ["content.js"]
+      "js": ["dist/combined.js"]
     }
   ]
 }
